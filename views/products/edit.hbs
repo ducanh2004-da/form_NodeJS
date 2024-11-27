@@ -1,0 +1,11 @@
+<h1>{{title}}</h1>
+    
+<form action="/product/{{product.ProID}}" method="POST">
+    <input type="text" name="ProName" value="{{product.ProName}}" required>
+    <input type="text" name="TinyDes" value="{{product.TinyDes}}" required>
+    <input type="text" name="FullDes" value="{{product.FullDes}}" required>
+    <input type="number" name="Price" value="{{product.Price}}" required>
+    <input type="number" name="Quantity" value="{{product.Quantity}}" required>
+    <button type="submit">Chỉnh sửa</button>
+</form>
+</div>

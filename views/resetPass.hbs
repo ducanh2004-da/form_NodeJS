@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+</head>
+<body class="text-center">
+    <h1>Reset Password</h1>
+    <form action="/reset-password" method="POST">
+        <input type="hidden" name="token" value="{{token}}">
+
+        <label for="newPassword">Enter new password:</label>
+        <input type="password" id="newPassword" name="newPassword" required>
+
+        <button type="submit">Reset Password</button>
+    </form>
+
+    {{#if message}}
+        <p>{{message}}</p>
+    {{/if}}
+
+    {{#if error}}
+        <p style="color:red;">{{error}}</p>
+    {{/if}}
+</body>
+</html>

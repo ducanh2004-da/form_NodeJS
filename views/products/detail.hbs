@@ -1,0 +1,23 @@
+<h1>{{title}}</h1>
+    <div class="detail text-center">
+        <a href="/product"> <= Quay lại trang chủ</a>
+        <div class="title">
+            <h1>Sản phẩm: {{product.ProName}}</h1>
+        </div>
+        <div class="content">
+            <h3>TinyDes</h3>
+            <p>{{product.TinyDes}}</p>
+            <h3>FullDes</h3>
+            <p>{{product.FullDes}}</p>
+            <h3>Price</h3>
+            <p>{{product.Price}}</p>
+            <h3>Quantity</h3>
+            <p>{{product.Quantity}}</p>
+        </div>
+        <div class="footer">
+            <a href="/product/{{this.ProID}}/edit">Edit</a> | 
+            <form action="/product/{{this.ProID}}?_method=DELETE" method="POST" style="display:inline;">
+                <button type="submit">Xóa</button>
+            </form>
+        </div>
+    </div>

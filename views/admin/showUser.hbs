@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Người Dùng</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f0f2f5;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .user-header {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .user-detail p {
+            font-size: 1rem;
+            color: #555;
+            margin: 10px 0;
+        }
+
+        .user-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .btn-edit {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .btn-delete {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .btn-edit:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-delete:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="user-header">Thông Tin Người Dùng</h1>
+    <div class="user-detail">
+        <p><strong>ID:</strong>{{users.id}}</p>
+        <p><strong>Họ Tên:</strong> {{users.username}}</p>
+        <p><strong>Email:</strong> {{users.email}}</p>
+        <p><strong>Vai Trò:</strong> {{users.role}}</p>
+        <p><strong>Ngày Tạo Tài Khoản:</strong> {{users.created_at}}</p>
+        <p><strong>Bút danh:</strong> {{users.penName}}</p>
+    </div>
+
+    <div class="user-actions">
+        <a href="/admin/user/1/edit" class="btn btn-edit">Chỉnh Sửa</a>
+        <form action="/admin/user/1/delete" method="POST" onsubmit="return confirm('Bạn có chắc chắn muốn xóa người dùng này?');">
+            <button type="submit" class="btn btn-delete">Xóa Người Dùng</button>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
